@@ -1,10 +1,10 @@
 class Wechattweak < Formula
   desc "A command-line tool for tweaking WeChat"
   homepage "https://github.com/tanranv5/WeChatTweak"
-  url "https://github.com/tanranv5/WeChatTweak/releases/download/v36559.1/wechattweak-v36559.1-macos-universal.tar.gz"
-  sha256 "f602077b6e0a6714f3bb46f0948cae600ef7afb48d0cef801c2166c6d86c4082"
+  url "https://github.com/tanranv5/WeChatTweak/releases/download/v36559.2/wechattweak-v36559.2-macos-universal.tar.gz"
+  sha256 "f95637ebab51039cd5cff138b9b239c4fb3a4902298608d658eaa12d2d48c3e0"
   license "AGPL-3.0"
-  version "36559.1"
+  version "36559.2"
 
   def install
     bin.install "wechattweak"
