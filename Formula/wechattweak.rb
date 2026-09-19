@@ -5,6 +5,9 @@ class Wechattweak < Formula
   sha256 "575fa1f4691453c42cafbf08576e5c7e97362a22302034161c1cf5b0c2069e7f"
   license "AGPL-3.0"
   version "270098"
+  # 微信版本号没变、只是包内容更新（新增 restore / --block-update）。
+  # 不加 revision 的话 brew 认为版本相同不会升级，已装用户拿不到新 CLI。
+  revision 1
 
   def install
     bin.install "wechattweak"
