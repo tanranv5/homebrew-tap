@@ -2,12 +2,13 @@ class Wechattweak < Formula
   desc "A command-line tool for tweaking WeChat"
   homepage "https://github.com/tanranv5/WeChatTweak"
   url "https://github.com/tanranv5/WeChatTweak/releases/download/v270098/wechattweak-v270098-macos-universal.tar.gz"
-  sha256 "575fa1f4691453c42cafbf08576e5c7e97362a22302034161c1cf5b0c2069e7f"
+  sha256 "2e3048bc0a3c1f8ab4d01d03ab156ca818ef856ddbc465c70fc6e79221d93714"
   license "AGPL-3.0"
   version "270098"
-  # 微信版本号没变、只是包内容更新（新增 restore / --block-update）。
-  # 不加 revision 的话 brew 认为版本相同不会升级，已装用户拿不到新 CLI。
-  revision 1
+  # 微信版本号没变、只换包内容，必须递增 revision 才会让已装用户 brew upgrade。
+  # revision 2：修复重签 bug（--deep --entitlements 会把主 app 的 entitlements
+  # 盖到所有嵌套 helper 上，导致 WeChatAppEx 等沙盒初始化 SIGILL、小程序打不开）。
+  revision 2
 
   def install
     bin.install "wechattweak"
