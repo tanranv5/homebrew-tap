@@ -2,11 +2,13 @@ class Wechattweak < Formula
   desc "A command-line tool for tweaking WeChat"
   homepage "https://github.com/tanranv5/WeChatTweak"
   url "https://github.com/tanranv5/WeChatTweak/releases/download/v270100/wechattweak-v270100-macos-universal.tar.gz"
-  sha256 "8a1b225d1d4cd4344afc2154183561ff3be16c03e5351f4dcfb46648ebb8d708"
+  sha256 "fb0f1964c40544ac1ac3ada684cd5f33ef31c2bfb7acdae9d7bf52cb13d4ca69"
   license "AGPL-3.0"
   version "270100"
-  # 版本号从 270098 升到 270100（支持 WeChat 4.1.15 build 270100）→ 版本本身变化即可触发
-  # brew upgrade，所以 revision 归零（不再需要 revision）。
+  # 微信版本号仍是 270100，只改了 CLI 的输出文案 → 必须递增 revision，否则已装用户不会 brew upgrade。
+  # revision 1：重复 patch 时不再显示像报错的 "⚠️ expected 不匹配"，改为"已是补丁状态 → 跳过（正常）"；
+  #             vmaddr/fileoff 等调试行改为仅在 WXRT_DEBUG=1 时输出。
+  revision 1
   #
   # 历史 revision：2 = 修重签写坏嵌套 entitlements（小程序打不开）；
   #              3 = 屏蔽自动更新改为默认开启 + 新增 --no-block-update。
